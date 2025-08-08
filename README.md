@@ -1,4 +1,4 @@
-# Product Catalog Viewer (FastAPI + Streamlit + Groq + HuggingFace Embedding)
+# Product Catalog Viewer
 
 A small product catalog vier with an AI feature. Includes:
 
