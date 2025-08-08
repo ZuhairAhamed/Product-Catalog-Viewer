@@ -56,29 +56,37 @@ Open the UI at http://localhost:8501
 
 
 
-#APIs
+## APIs
 
-GET /products
+## GET /products
+
 
   • All products:
+  
 
    curl -s "http://localhost:8000/products"
+   
 
   • With filters:
+  
    curl -s "http://localhost:8000/products?category=Footwear&min_price=100&max_price=250"
 
 
 
-POST /search
+## POST /search
+
 
   • Example query:
+  
       curl --location 'http://localhost:8000/search' \
       --header 'Content-Type: application/json' \
       --data '{
           "query" : "running shoes under $100 with good reviews"
       }'
 
+
   • Another example:
+  
       curl --location 'http://localhost:8000/search' \
       --header 'Content-Type: application/json' \
       --data '{
