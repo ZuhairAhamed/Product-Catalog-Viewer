@@ -1,39 +1,56 @@
 # Product Catalog Viewer (FastAPI + Streamlit + Groq + HuggingFace Embedding)
 
 A small product catalog vier with an AI feature. Includes:
+
 - Product catalog viewer with category/price filters
+  
 - Smart search fucntionality using natural language queries (Option A)
 
 High-level steps
+
   • Startup & config
-    • Loads .env from ai-ecommerce/ .
+    • Loads .env from Product-Catalog-Viewer/ .
+    
     • Sets GPT_MODEL and EMBEDDING_MODEL ( sentence-transformers/all-MiniLM-L6-v2), GROQ_API_KEY.
+    
   • Data
+  
     • Uses a hardcoded SAMPLE_PRODUCTS list with fields: id, name, price, category, description, rating.
+    
   • Embeddings
+  
     • If EMBEDDING_MODEL all-MiniLM-L6-v2 
+    
     • Embeddings are used to build/search a FAISS index.
+    
   • FAISS index
+  
     • Built lazily on first search from corpus strings: name + description + category.
+    
   • Filter extraction
+  
     • Primary: Groq chat extracts {name, category, max_price, min_rating, description} from a query.
+    
 
 ## Requirements
 - Python 3.10+
 
 ## Setup
-cd ai-ecommerce
+cd Product-Catalog-Viewer
+
 python -m venv .venv
+
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
 pip install -r requirements.txt
 
-Environment variables can be provided via .env in the ai-ecommerce/ folder.
+Environment variables can be provided via .env in the Product-Catalog-Viewer/ folder.
 
 ## Run backend
-uvicorn backend.main:app --reload --port 8000
+uvicorn main:app --reload --port 8000
 
 ## Run UI (Streamlit)
-streamlit run frontend/app.py
+streamlit run app.py
 
 Open the UI at http://localhost:8501
 
