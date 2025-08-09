@@ -34,6 +34,7 @@ High-level steps
 
 ## Requirements
 - Python 3.10+
+- Update the GROQ_API_KEY with you api key
 
 ## Setup
 cd Product-Catalog-Viewer
