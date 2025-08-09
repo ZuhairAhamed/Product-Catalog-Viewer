@@ -58,7 +58,7 @@ SAMPLE_PRODUCTS: List[Product] = [
 ]
 
 
-load_dotenv(dotenv_path=(Path(__file__).resolve().parent.parent / ".env"))
+load_dotenv(dotenv_path=(Path(__file__).resolve().parent / ".env"))
 
 GPT_MODEL = os.environ.get("GPT_MODEL", "openai/gpt-oss-20b")
 EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
